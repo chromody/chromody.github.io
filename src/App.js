@@ -20,7 +20,7 @@ function App() {
       return () => clearInterval(typingInterval);
     }
     setDisplayPopup(true);
-  }, [charIndex]); // Trigger when charIndex changes
+  }, [greetings, charIndex]); // Trigger when charIndex changes
 
   return (
     <div>
