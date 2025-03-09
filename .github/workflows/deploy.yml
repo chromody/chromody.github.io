@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug environment variables
-        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
-
       - name: Checkout code
         uses: actions/checkout@v2
 
