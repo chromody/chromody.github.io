@@ -30,4 +30,4 @@ jobs:
           publish_branch: gh-pages        # Use 'publish_branch' instead of 'deploy_branch'
           publish_dir: build              # Use 'publish_dir' instead of 'folder'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
