@@ -7,7 +7,7 @@ function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [charIndex, setCharIndex] = useState(0);
   const [displayPopup, setDisplayPopup] = useState(false);
-  const greetings = `const greeting="👋Welcome!"👋\nprint(greeting)\n// Output: Welcome!`;
+  const greetings = `const greeting="👋Welcome!👋"\nprint(greeting)\n// Output: Welcome!`;
 
   useEffect(() => {
     if (charIndex < greetings.length) {
