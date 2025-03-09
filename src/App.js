@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { CodeBlock, dracula } from 'react-code-blocks';
 
@@ -21,6 +21,8 @@ function App() {
     }
     setDisplayPopup(true);
   }, [greetings, charIndex]); // Trigger when charIndex changes
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <div>
@@ -56,6 +58,27 @@ function App() {
             </div>
         }
       </Container>
+
+      <footer className="bg-dark text-white text-center py-3 mt-auto fixed-bottom">
+        <Container>
+          <Row>
+            <Col>
+              <p>© {currentYear} Jesus Villanueva-Segovia. All Rights Reserved.</p>
+              <p>
+                <a href="https://github.com/chromody" className="text-white" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a> | 
+                <a href="https://www.linkedin.com/in/jesusv-s/" className="text-white" target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a> | 
+                <a href="/JesusResume.pdf" className="text-white" target="_blank" rel="noopener noreferrer" download>
+                  Resume
+                </a>
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
     </div>
   );
 }
