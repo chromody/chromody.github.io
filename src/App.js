@@ -26,6 +26,8 @@ function App() {
 
   return (
     <div>
+      <title>Jesus Villanueva-Segovia</title>
+
       <Navbar bg="light" expand="lg" className="shadow-lg">
         <Container>
           <Navbar.Brand className="fs-3 font-FiraCode">
