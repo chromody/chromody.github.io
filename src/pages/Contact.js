@@ -4,10 +4,12 @@ import ReactJsonView from '@microlink/react-json-view'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [src, setSrc] = useState({
         email: "youremail@email.com",
+        name: "name",
         title: "title",
         message: "message",
     });
@@ -19,10 +21,58 @@ const Contact = () => {
         setSrc(edit.updated_src);
     }
 
+
+    /*
+    emailjs.send("SERVICE","TEMPLATE",{
+        title: "TITLE",
+        name: "NAME",
+        message: "MESSAGE",
+        email: "EMAIL@gmail.com",
+    });
+    */
+
     const handleEmail = () => {
-        console.log(src);
-        setDisplayTrue(true);
-        setSuccess("success");
+        const form = document.createElement('form');
+
+        // Manually create inputs and append them to the form
+        const titleInput = document.createElement('input');
+        titleInput.name = 'title';
+        titleInput.value = src.title;
+        form.appendChild(titleInput);
+
+        const nameInput = document.createElement('input');
+        nameInput.name = 'name';
+        nameInput.value = src.name;
+        form.appendChild(nameInput);
+
+        const messageInput = document.createElement('textarea');
+        messageInput.name = 'message';
+        messageInput.value = src.message;
+        form.appendChild(messageInput);
+
+        const emailInput = document.createElement('input');
+        emailInput.name = 'email';
+        emailInput.value = src.email;
+        form.appendChild(emailInput);
+
+        console.log(process.env);
+
+        emailjs
+        .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form, {
+            publicKey: process.env.REACT_APP_PUBLIC_KEY,
+        })
+        .then(
+            () => {
+                console.log('SUCCESS!');
+                setDisplayTrue(true);
+                setSuccess("success");
+            },
+            (error) => {
+                setDisplayTrue(true);
+                setSuccess("failure");
+                console.log(error)
+            },
+        );
     }
 
     const messageColorMap = {
@@ -60,7 +110,7 @@ const Contact = () => {
                     {
                         displayTrue &&
                         <div className={`mt-3 text-${messageColorMap[success]}`}>
-                            Success
+                            result
                         </div>
                     }
                 </Container>

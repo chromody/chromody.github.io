@@ -19,6 +19,9 @@ const Footer = () => {
                     </a> | 
                     <a href="/JesusResume.pdf" className="text-white" target="_blank" rel="noopener noreferrer" download>
                     Resume
+                    </a> |
+                    <a href="/contact" className="text-white">
+                    Contact
                     </a>
                 </p>
                 </Col>
