@@ -1,19 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  createHashRouter,
+  RouterProvider
+} from 'react-router-dom'; // Note 1
+
+// import routed components
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 
+// Define the router with routes
+const router = createHashRouter([
+  {
+    path: '/',          // This is the root route
+    element: <Home />,   // The component rendered for this route
+  },
+  {
+    path: '/contact',   // The "Contact" route
+    element: <Contact />,
+  },
+]);
+
 function App() {
   return (
-    <>
-      <Router basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
-      </Router>
-    </>
+    <RouterProvider router={router} />
   );
 }
 
