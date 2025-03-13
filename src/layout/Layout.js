@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Container } from 'react-bootstrap';
 import Footer from "./../components/Footer";
 import Topbar from "./../components/Navbar";
 
