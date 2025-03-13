@@ -55,8 +55,6 @@ const Contact = () => {
         emailInput.value = src.email;
         form.appendChild(emailInput);
 
-        console.log(process.env);
-
         emailjs
         .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form, {
             publicKey: process.env.REACT_APP_PUBLIC_KEY,
