@@ -31,46 +31,37 @@ const Contact = () => {
     });
     */
 
-    const handleEmail = () => {
-        const form = document.createElement('form');
+    const handleEmail = async () => {
+        const form = new FormData();
+        form.append('title', src.title);
+        form.append('name', src.name);
+        form.append('message', src.message);
+        form.append('email', src.email);
 
-        // Manually create inputs and append them to the form
-        const titleInput = document.createElement('input');
-        titleInput.name = 'title';
-        titleInput.value = src.title;
-        form.appendChild(titleInput);
+        try {
+            const response = await fetch("https://email-chromody.gbus.workers.dev/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    title: src.title,
+                    name: src.name,
+                    message: src.message,
+                    email: src.email
+                }),
+            });
 
-        const nameInput = document.createElement('input');
-        nameInput.name = 'name';
-        nameInput.value = src.name;
-        form.appendChild(nameInput);
-
-        const messageInput = document.createElement('textarea');
-        messageInput.name = 'message';
-        messageInput.value = src.message;
-        form.appendChild(messageInput);
-
-        const emailInput = document.createElement('input');
-        emailInput.name = 'email';
-        emailInput.value = src.email;
-        form.appendChild(emailInput);
-
-        emailjs
-        .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form, {
-            publicKey: process.env.REACT_APP_PUBLIC_KEY,
-        })
-        .then(
-            () => {
-                console.log('SUCCESS!');
+            if (response.ok) {
+                console.log("SUCCESS!");
                 setDisplayTrue(true);
                 setSuccess("success");
-            },
-            (error) => {
-                setDisplayTrue(true);
-                setSuccess("failure");
-                console.log(error)
-            },
-        );
+            } else {
+                throw new Error("Failed to send email");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setDisplayTrue(true);
+            setSuccess("failure");
+        }
     }
 
     const messageColorMap = {

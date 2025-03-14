@@ -21,13 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Inject environment variables
-        run: | 
-          echo "REACT_APP_SERVICE_ID=${{ secrets.REACT_APP_SERVICE_ID }}" >> .env
-          echo "REACT_APP_TEMPLATE_ID=${{ secrets.REACT_APP_TEMPLATE_ID }}" >> .env
-          echo "REACT_APP_PUBLIC_KEY=${{ secrets.REACT_APP_PUBLIC_KEY }}" >> .env
-          cat .env
-
       - name: Build the app
         run: npm run build
 
