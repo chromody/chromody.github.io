@@ -4,7 +4,6 @@ import ReactJsonView from '@microlink/react-json-view'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [src, setSrc] = useState({
