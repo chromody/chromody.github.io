@@ -52,12 +52,12 @@ const Contact = () => {
                 console.log("SUCCESS!");
                 setSubmitStatus("success");
             } else {
+                setSubmitStatus("warning");
                 throw new Error("Failed to send email");
             }
         } catch (error) {
             console.error("Error:", error);
-            setDisplayTrue(true);
-            setSuccess("failure");
+            setSubmitStatus("warning");
         }
     }
 
@@ -72,8 +72,8 @@ const Contact = () => {
         }, 20000);
     
         return () => {
-            setDisplayTrue(false);
-            clearInterval(interval)
+            setSubmitStatus("warning");
+            clearInterval(interval);
         };
       }, [count]); 
 
