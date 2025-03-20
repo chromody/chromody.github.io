@@ -12,7 +12,7 @@ const Contact = () => {
         title: "title",
         message: "message",
     });
-    const [submitStatus, setSubmitStatus] = useState("Warning");
+    const [submitStatus, setSubmitStatus] = useState("warning");
     const [count, setCount] = useState(0);
 
     const updateSrc = (edit) => {
