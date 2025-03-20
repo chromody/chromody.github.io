@@ -12,8 +12,7 @@ const Contact = () => {
         title: "title",
         message: "message",
     });
-    const [displayTrue, setDisplayTrue] = useState(false);
-    const [success, setSuccess] = useState("failure");
+    const [submitStatus, setSubmitStatus] = useState("Warning");
     const [count, setCount] = useState(0);
 
     const updateSrc = (edit) => {
@@ -51,8 +50,7 @@ const Contact = () => {
 
             if (response.ok) {
                 console.log("SUCCESS!");
-                setDisplayTrue(true);
-                setSuccess("success");
+                setSubmitStatus("success");
             } else {
                 throw new Error("Failed to send email");
             }
@@ -92,15 +90,9 @@ const Contact = () => {
                             onEdit={(o) => {updateSrc(o)}}
                         />
                     </Card>
-                    <Button className="mt-3" variant="success" onClick={() => {handleEmail()}}>
+                    <Button className="mt-3" variant={submitStatus} onClick={() => {handleEmail()}}>
                         Submit
                     </Button>
-                    {
-                        displayTrue &&
-                        <div className={`mt-3 text-${messageColorMap[success]}`}>
-                            result
-                        </div>
-                    }
                 </Container>
             </Container>
       </Layout>
