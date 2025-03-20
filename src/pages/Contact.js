@@ -61,11 +61,6 @@ const Contact = () => {
         }
     }
 
-    const messageColorMap = {
-        "success": "success",
-        "failure": "danger",
-    }
-
     useEffect(() => {
         const interval = setInterval(() => {
           setCount((prevCount) => prevCount + 1);
