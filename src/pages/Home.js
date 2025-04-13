@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { CodeBlock, dracula } from 'react-code-blocks';
 import Layout from './../layout/Layout';
-import { FaAngleRight } from "react-icons/fa6";
 
 const Home = () => {
     const [displayedText, setDisplayedText] = useState('');
