@@ -7,6 +7,8 @@ import {
 // import routed components
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
+
 
 // Define the router with routes
 const router = createHashRouter([
@@ -17,6 +19,10 @@ const router = createHashRouter([
   {
     path: '/contact',   // The "Contact" route
     element: <Contact />,
+  },
+  {
+    path: '/portfolio',   // The "Contact" route
+    element: <Portfolio />,
   },
 ]);
 

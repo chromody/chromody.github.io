@@ -39,6 +39,9 @@ const Topbar = () => {
                         <li>
                             <a href="/#/contact" className="text-decoration-none">Contact</a>
                         </li>
+                        <li>
+                            <a href="/#/portfolio" className="text-decoration-none">Portfolio</a>
+                        </li>
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>

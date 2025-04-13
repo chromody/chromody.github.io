@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { CodeBlock, dracula } from 'react-code-blocks';
 import Layout from './../layout/Layout';
+import { FaAngleRight } from "react-icons/fa6";
 
 const Home = () => {
     const [displayedText, setDisplayedText] = useState('');
@@ -20,7 +21,7 @@ const Home = () => {
         return () => clearInterval(typingInterval);
       }
       setDisplayPopup(true);
-    }, [greetings, charIndex]); // Trigger when charIndex changes
+    }, [greetings, charIndex]); // Trigger when charIndexchanges
     
     return (
       <Layout> 
@@ -36,14 +37,14 @@ const Home = () => {
   
           {
             displayPopup && 
-              <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                <Card bg='dark' className="mt-4 shadow-lg p-1 text-center" style={{ display: 'inline-block' }}>
-                  <Card.Body>
-                    <Card.Text>
-                      👋 Welcome!👋
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                  <Card bg='dark' className="mt-4 shadow-lg p-1 text-center" style={{ display: 'inline-block' }}>
+                    <Card.Body>
+                      <Card.Text>
+                        👋 Welcome!👋
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
               </div>
           }
       </Layout>
