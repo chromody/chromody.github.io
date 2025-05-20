@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import { CodeBlock, dracula } from 'react-code-blocks';
 import Layout from './../layout/Layout';
+import { FaArrowRightLong } from "react-icons/fa6";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
     const [displayedText, setDisplayedText] = useState('');
     const [charIndex, setCharIndex] = useState(0);
     const [displayPopup, setDisplayPopup] = useState(false);
@@ -20,7 +24,7 @@ const Home = () => {
         return () => clearInterval(typingInterval);
       }
       setDisplayPopup(true);
-    }, [greetings, charIndex]); // Trigger when charIndex changes
+    }, [greetings, charIndex]); // Trigger when charIndexchanges
     
     return (
       <Layout> 
@@ -36,14 +40,19 @@ const Home = () => {
   
           {
             displayPopup && 
-              <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                <Card bg='dark' className="mt-4 shadow-lg p-1 text-center" style={{ display: 'inline-block' }}>
-                  <Card.Body>
-                    <Card.Text>
-                      👋 Welcome!👋
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                  <Card bg='dark' className="mt-4 shadow-lg p-1 text-center" style={{ display: 'inline-block' }}>
+                    <Card.Body>
+                      <Card.Text>
+                        <div className="d-flex flex-column">
+                        <span>👋 Welcome!👋</span>
+                        <Button className="button-primary mt-2 p-0" onClick={() => {
+                          navigate("/portfolio")
+                        }}><FaArrowRightLong /></Button>
+                        </div>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
               </div>
           }
       </Layout>

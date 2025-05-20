@@ -4,7 +4,6 @@ import ReactJsonView from '@microlink/react-json-view'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [src, setSrc] = useState({
@@ -13,8 +12,7 @@ const Contact = () => {
         title: "title",
         message: "message",
     });
-    const [displayTrue, setDisplayTrue] = useState(false);
-    const [success, setSuccess] = useState("failure");
+    const [submitStatus, setSubmitStatus] = useState("warning");
     const [count, setCount] = useState(0);
 
     const updateSrc = (edit) => {
@@ -31,53 +29,36 @@ const Contact = () => {
     });
     */
 
-    const handleEmail = () => {
-        const form = document.createElement('form');
+    const handleEmail = async () => {
+        const form = new FormData();
+        form.append('title', src.title);
+        form.append('name', src.name);
+        form.append('message', src.message);
+        form.append('email', src.email);
 
-        // Manually create inputs and append them to the form
-        const titleInput = document.createElement('input');
-        titleInput.name = 'title';
-        titleInput.value = src.title;
-        form.appendChild(titleInput);
+        try {
+            const response = await fetch("https://email-chromody.gbus.workers.dev/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    title: src.title,
+                    name: src.name,
+                    message: src.message,
+                    email: src.email
+                }),
+            });
 
-        const nameInput = document.createElement('input');
-        nameInput.name = 'name';
-        nameInput.value = src.name;
-        form.appendChild(nameInput);
-
-        const messageInput = document.createElement('textarea');
-        messageInput.name = 'message';
-        messageInput.value = src.message;
-        form.appendChild(messageInput);
-
-        const emailInput = document.createElement('input');
-        emailInput.name = 'email';
-        emailInput.value = src.email;
-        form.appendChild(emailInput);
-
-        console.log(process.env);
-
-        emailjs
-        .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form, {
-            publicKey: process.env.REACT_APP_PUBLIC_KEY,
-        })
-        .then(
-            () => {
-                console.log('SUCCESS!');
-                setDisplayTrue(true);
-                setSuccess("success");
-            },
-            (error) => {
-                setDisplayTrue(true);
-                setSuccess("failure");
-                console.log(error)
-            },
-        );
-    }
-
-    const messageColorMap = {
-        "success": "success",
-        "failure": "danger",
+            if (response.ok) {
+                console.log("SUCCESS!");
+                setSubmitStatus("success");
+            } else {
+                setSubmitStatus("warning");
+                throw new Error("Failed to send email");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setSubmitStatus("warning");
+        }
     }
 
     useEffect(() => {
@@ -86,8 +67,8 @@ const Contact = () => {
         }, 20000);
     
         return () => {
-            setDisplayTrue(false);
-            clearInterval(interval)
+            setSubmitStatus("warning");
+            clearInterval(interval);
         };
       }, [count]); 
 
@@ -104,15 +85,9 @@ const Contact = () => {
                             onEdit={(o) => {updateSrc(o)}}
                         />
                     </Card>
-                    <Button className="mt-3" variant="success" onClick={() => {handleEmail()}}>
+                    <Button className="mt-3" variant={submitStatus} onClick={() => {handleEmail()}}>
                         Submit
                     </Button>
-                    {
-                        displayTrue &&
-                        <div className={`mt-3 text-${messageColorMap[success]}`}>
-                            result
-                        </div>
-                    }
                 </Container>
             </Container>
       </Layout>

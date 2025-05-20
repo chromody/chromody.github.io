@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Navbar, Container, Offcanvas } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa'; // Import tray/hamburger icon from react-icons
+import { useNavigate } from "react-router-dom";
 
 const Topbar = () => {
+    const navigate = useNavigate();
     const [show, setShow] = useState(false);
+    const [logoActive, setLogoActive] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -13,7 +16,7 @@ const Topbar = () => {
             <Navbar bg="light" expand="lg" className="shadow-lg">
                 <Container>
                     <Navbar.Brand className="fs-3 font-FiraCode">
-                        Jesus Villanueva-Segovia
+                        <span onMouseEnter={() => {setLogoActive(!logoActive)}} onMouseLeave={() => {setLogoActive(!logoActive)}} onClick={() => {navigate("/")}} className={logoActive === true ? "text-primary" : ""}>Jesus Villanueva-Segovia</span>
                     </Navbar.Brand>
                     
                     {/* Tray Icon for opening Offcanvas */}
@@ -37,7 +40,10 @@ const Topbar = () => {
                             <a href="/" className="text-decoration-none">Home</a>
                         </li>
                         <li>
-                            <a href="/contact" className="text-decoration-none">Contact</a>
+                            <a href="/#/contact" className="text-decoration-none">Contact</a>
+                        </li>
+                        <li>
+                            <a href="/#/portfolio" className="text-decoration-none">Portfolio</a>
                         </li>
                     </ul>
                 </Offcanvas.Body>
