@@ -12,6 +12,7 @@
     "@uiw/react-json-view": "^2.0.0-alpha.30",
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.3.3",
+    "fs": "^0.0.1-security",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-code-blocks": "^0.1.6",
