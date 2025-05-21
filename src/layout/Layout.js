@@ -7,10 +7,12 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Topbar />
-            <Container style={{ paddingTop: '30px' }}>
+            <Container style={{ paddingTop: '30px', paddingBottom: "125px" }}>
                 {children}
             </Container>
-            <Footer />
+            <div className="fixed-bottom" style={{}}>
+                <Footer />
+            </div>
         </div>
     );
 };

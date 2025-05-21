@@ -1,0 +1,8 @@
+/*
+only should have classes so a card looks active
+*/
+
+.active {
+    border: 3px solid #378dfc;
+    transform: scale(1.05, 1.05);
+}

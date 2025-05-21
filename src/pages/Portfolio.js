@@ -17,12 +17,12 @@ const Portfolio = () => {
 
     return(
         <Layout>
-            <div className=''>
+            <div className='row rows-cols-1 rows-cols-md-2 g-4'>
                 {
                     data.map( (project, i) => {
                         console.log(project);
                         return (
-                            <div key={i}>
+                            <div className="col" key={i}>
                                 <ProjectCard imgSrc={project.imageSrc} highlightImage={project.highlightImage} link={project.link} title={project.title} description={project.description} />
                             </div>
                         );
