@@ -1,19 +1,19 @@
 import "./style/ProjectCard.css";
 import { useState, useEffect } from "react";
+import SVG from "react-inlinesvg";
 
 const ProjectCard = ({imgSrc, highlightImage, link, title, description}) => {
     let [active, setActive] = useState(false);
 
     return (
-        <div className={`card bg-light rounded ${active ? "active" : ""}`} style={{ height: "400px", width: "250px" }} onMouseEnter={() => {setActive(true)}} onMouseLeave={() => {setActive(false);}}>
-            
-            <div style={{position: "relative"}}>
-                <img className={`card-top-img ${active ? "" : "rounded-top"}`} src={imgSrc} style={{display: "block", width: "100%", height: "150px", objectFit: 'cover'}}/>
-                <div style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
+        <div className={`card bg-light rounded ${active ? "active" : ""}`} style={{ height: "400px", width: "250px", border: active ? "solid #378dfc 4px" : "none" }} onMouseEnter={() => {setActive(true)}} onMouseLeave={() => {setActive(false);}}>
+            <div className="position-relative overflow-hidden">
+                <img className={`card-top-img rounded-top`} src={imgSrc} style={{display: "block", width: "100%", height: "150px", objectFit: 'cover'}}/>
+                <div className={`${active ? "overlay" : ""} d-flex align-items-center justify-content-center`}>
                     {
                         active && highlightImage != "" ? 
-                            <a href={link}>
-                                <img src={highlightImage}/>
+                            <a target="_blank" rel="noopener noreferrer" href={link} style={{color: "blue"}}>
+                                <SVG src={highlightImage} className="svg-icon" style={{ height: "50px", width: "50px"}} preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')} />
                             </a>
                         : 
                             <></>
@@ -31,5 +31,6 @@ const ProjectCard = ({imgSrc, highlightImage, link, title, description}) => {
         </div>
     );
 }
+
 
 export default ProjectCard;

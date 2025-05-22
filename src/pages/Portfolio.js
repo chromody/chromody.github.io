@@ -17,12 +17,12 @@ const Portfolio = () => {
 
     return(
         <Layout>
-            <div className='row rows-cols-1 rows-cols-md-2 g-4'>
+            <div className='row rows-cols-1 rows-cols-md-2 gap-3'>
                 {
                     data.map( (project, i) => {
                         console.log(project);
                         return (
-                            <div className="col" key={i}>
+                            <div className="col d-flex align-items-center justify-content-center" style={{maxWidth: "250px"}} key={i}>
                                 <ProjectCard imgSrc={project.imageSrc} highlightImage={project.highlightImage} link={project.link} title={project.title} description={project.description} />
                             </div>
                         );

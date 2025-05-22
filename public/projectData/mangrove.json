@@ -1,7 +1,7 @@
 {
-    "imageSrc": "Mangrove_Logo_Only.svg", 
-    "highlightImage": "", 
-    "link": "", 
+    "imageSrc": "/projectImages/Mangrove_Logo_Only.svg", 
+    "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg", 
+    "link": "https://github.com/tntechcsc/webharness", 
     "title": "Mangrove", 
     "description": "An application"
 }
