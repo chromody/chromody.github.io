@@ -16,7 +16,7 @@ const Topbar = () => {
             <Navbar bg="light" expand="lg" className="shadow-lg">
                 <Container>
                     <Navbar.Brand className="fs-3 font-FiraCode">
-                        <span onMouseEnter={() => {setLogoActive(!logoActive)}} onMouseLeave={() => {setLogoActive(!logoActive)}} onClick={() => {navigate("/")}} className={logoActive === true ? "text-primary" : ""}>Jesus Villanueva-Segovia</span>
+                        <span onMouseEnter={() => {setLogoActive(true)}} onMouseLeave={() => {setLogoActive(false)}} onClick={() => {navigate("/")}} className={logoActive === true ? "text-primary" : ""}>Jesus Villanueva-Segovia</span>
                     </Navbar.Brand>
                     
                     {/* Tray Icon for opening Offcanvas */}

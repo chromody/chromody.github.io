@@ -10,17 +10,14 @@ const Portfolio = () => {
             let projectInfo = await projectData();
             setData(projectInfo);
         }
-        getData().then(() => {
-            console.log(data);
-        })
-    }, [data])
+        getData();
+    })
 
     return(
         <Layout>
             <div className='row rows-cols-1 rows-cols-md-2 gap-3 d-flex justify-content-center align-items-center'>
                 {
-                    data.map( (project, i) => {
-                        console.log(project);
+                    data && data.map( (project, i) => {
                         return (
                             <div className="col d-flex align-items-center justify-content-center" style={{maxWidth: "350px"}} key={i}>
                                 <ProjectCard imgSrc={project.imageSrc} highlightImage={project.highlightImage} link={project.link} title={project.title} description={project.description} />
