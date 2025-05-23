@@ -3,5 +3,5 @@
     "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg", 
     "link": "https://github.com/tntechcsc/webharness", 
     "title": "Mangrove", 
-    "description": "An application"
+    "description": "Served as a full stack developer and designer/architect for a software engineering team at Tennessee Tech with the purpose of improving workflow with the management of small experimental projects at NAVSEA Dahlgren. Oversaw the technical development of this from the stack of choice (Rust/Rocket, SQLCipher, React.js, and Electron.js) to how major portions of Mangrove were designed and how they should be implemented. Such as how sessions should be managed, middleware for API route and page protection, and how applications were managed while following agile principles."
 }

@@ -6,9 +6,9 @@ const ProjectCard = ({imgSrc, highlightImage, link, title, description}) => {
     let [active, setActive] = useState(false);
 
     return (
-        <div className={`card bg-light rounded ${active ? "active" : ""}`} style={{ height: "400px", width: "250px", border: active ? "solid #378dfc 4px" : "none" }} onMouseEnter={() => {setActive(true)}} onMouseLeave={() => {setActive(false);}}>
+        <div className={`card bg-light rounded ${active ? "active" : ""}`} style={{ height: "650px", width: "350px", border: active ? "solid #378dfc 4px" : "none" }} onMouseEnter={() => {setActive(true)}} onMouseLeave={() => {setActive(false);}}>
             <div className="position-relative overflow-hidden">
-                <img className={`card-top-img rounded-top`} src={imgSrc} style={{display: "block", width: "100%", height: "150px", objectFit: 'cover'}}/>
+                <img className={`card-top-img rounded-top`} src={imgSrc} style={{display: "block", width: "100%", height: "200px", objectFit: 'cover'}}/>
                 <div className={`${active ? "overlay" : ""} d-flex align-items-center justify-content-center`}>
                     {
                         active && highlightImage != "" ? 
@@ -20,13 +20,13 @@ const ProjectCard = ({imgSrc, highlightImage, link, title, description}) => {
                     }
                 </div>
             </div>
-            <div className="card-body text-center">
-                <h4>
+            <div className="card-body overflow-scroll">
+                <h4 className="w-full text-center" style={{color: "#485785" }}>
                     {title}
                 </h4>
-                <p>
+                <small className="w-full h-full text-start text-body text-small">
                     {description}
-                </p>
+                </small>
             </div>
         </div>
     );
