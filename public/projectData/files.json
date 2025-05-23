@@ -1,6 +1,1 @@
-{
-    "files": [
-        "mangrove.json",
-        "empower.json"
-    ]
-}
+{ "files": ["empower.json","mangrove.json"] }
