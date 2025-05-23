@@ -13,7 +13,7 @@ const Portfolio = () => {
         getData().then(() => {
             console.log(data);
         })
-    }, [])
+    }, [data])
 
     return(
         <Layout>

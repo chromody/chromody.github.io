@@ -27,7 +27,7 @@ export async function projectData() {
 
         //for loop to iterate through filesList
         for (let i = 0; i < n; ++i) {
-            if (filesList[i] != "files.json") {
+            if (filesList[i] !== "files.json") {
                 //loading in each json file
                 const response = await fetch("/projectData/" + filesList[i]);
                 if (!response.ok) {
