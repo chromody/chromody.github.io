@@ -7,11 +7,15 @@ const Portfolio = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         async function getData() {
-            let projectInfo = await projectData();
-            setData(projectInfo);
+            try {
+                let projectInfo = await projectData();
+                setData(projectInfo);
+            } catch (error) {
+                console.error(error);
+            }
         }
         getData();
-    })
+    }, [])
 
     return(
         <Layout>
