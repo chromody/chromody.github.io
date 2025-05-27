@@ -1,1 +1,7 @@
-{ "imageSrc": "/projectImages/miguelwattson.jpg", "highlightImage": "projectImages/link-svgrepo-com.svg", "link": "https://www.raspberrypi.com/news/social-animals-electric-eel-tweets-with-a-pi/", "title": "Threads Eel Bot", "description": "Eel Bot" }
+{
+    "imageSrc": "/projectImages/miguelwattson.jpg",
+    "highlightImage": "projectImages/link-svgrepo-com.svg",
+    "link": "https://www.raspberrypi.com/news/social-animals-electric-eel-tweets-with-a-pi/",
+    "title": "Threads Eel Bot",
+    "description": "Eel Bot"
+}

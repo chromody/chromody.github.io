@@ -1,1 +1,7 @@
-{ "imageSrc": "/projectImages/docker-mark-blue.png", "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg", "link": "https://github.com/chromody/rocket-backend-template", "title": "Mongo + Rocket Template", "description": "A template of a backend" }
+{
+    "imageSrc": "/projectImages/docker-mark-blue.png",
+    "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg",
+    "link": "https://github.com/chromody/rocket-backend-template",
+    "title": "Mongo + Rocket Template",
+    "description": "Developed an extensible template for a backend server that is meant to interact with users. This was done in Rocket (Rust) for a memory safe, fast, and reliable backend that interacts with a Mongo database using JWT's for further security and interoperability. This is all wrapped in a docker file which cleanly makes a minimzed docker image of the backend executable and uses the standard mongo docker image for a backend that is easy to spin up and test."
+}
