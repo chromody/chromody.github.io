@@ -1,0 +1,7 @@
+{
+    "imageSrc": "/projectImages/portfolio_website_pic.png",
+    "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg",
+    "link": "https://github.com/chromody/chromody.github.io",
+    "title": "Portfolio Website",
+    "description": "Developed this portfolio website where you are currently reading these projects. A user-focused web application built in React.js and Bootstrap and hosted via github's static pages. Though the domain is through Squarespace and the reverse proxy is done via a GCP server. Along with a development pipeline through Github Actions updating based on the main branch being updated. All of this is hosted via Github and is open-source, so anyone can view the source code for this website."
+}

@@ -1,0 +1,7 @@
+{
+    "imageSrc": "/projectImages/miguelwattson.jpg",
+    "highlightImage": "projectImages/link-svgrepo-com.svg",
+    "link": "https://www.raspberrypi.com/news/social-animals-electric-eel-tweets-with-a-pi/",
+    "title": "Threads Eel Bot",
+    "description": "Designed and implemented a social media (Threads) feed based on a real electric eel that is in the Tennesse Aquarium. Programmed a raspberry pi to hook into a currently existing audio feed for the eel's tank which would conditionally make a social media post if a electric discharge was detected. This was done via a python script that would analyze the audio feed, which would write the decibel and time to a google sheet if a discharge was detected. This google sheet would check for changes and hit a Make.com automation sequence via a webhook if a change was detected. This Make.com automation sequence would make a post via http request to Meta's API for threads."
+}
