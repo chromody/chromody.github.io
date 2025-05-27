@@ -3,5 +3,5 @@
     "highlightImage": "/projectImages/GitHub_Invertocat_Dark.svg",
     "link": "https://github.com/chromody/chromody.github.io",
     "title": "Portfolio Website",
-    "description": "And obviously I have to count this website"
+    "description": "Developed this portfolio website where you are currently reading these projects. A user-focused web application built in React.js and Bootstrap and hosted via github's static pages. Though the domain is through Squarespace and the reverse proxy is done via a GCP server."
 }
