@@ -17,7 +17,7 @@ const Footer = () => {
                             <a href="https://www.linkedin.com/in/jesusv-s/" className="text-white" target="_blank" rel="noopener noreferrer">
                             LinkedIn
                             </a> | 
-                            <a href="/JesusResume.pdf" className="text-white" target="_blank" rel="noopener noreferrer" download>
+                            <a href="https://drive.google.com/file/d/1DOyr9Ph8uGpFo1pch7-HJeNHUjfc7-Sc/view?usp=drive_link" className="text-white" target="_blank" rel="noopener noreferrer" download>
                             Resume
                             </a> |
                             <a href="/#/contact" className="text-white">
