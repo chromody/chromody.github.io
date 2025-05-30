@@ -11,7 +11,7 @@ const Home = () => {
     const [displayedText, setDisplayedText] = useState('');
     const [charIndex, setCharIndex] = useState(0);
     const [displayPopup, setDisplayPopup] = useState(false);
-    const greetings = `const greeting="👋Welcome!👋"\nprint(greeting)\ndisplayButtonToProject()\n// Output: Welcome!\n//->`;
+    const greetings = `const greeting="👋Welcome!👋"\nprint(greeting)\ndisplayButtonToProjects()\n// Output: Welcome!\n//->`;
   
     useEffect(() => {
       if (charIndex < greetings.length) {
