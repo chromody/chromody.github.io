@@ -16,6 +16,7 @@ const Topbar = () => {
                         <span onMouseEnter={() => {setLogoActive(true)}} onMouseLeave={() => {setLogoActive(false)}} onClick={() => {navigate("/")}} className={logoActive === true ? "text-primary" : ""}>Jesus Villanueva-Segovia</span>
                     </Navbar.Brand>
                     
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/#/">
