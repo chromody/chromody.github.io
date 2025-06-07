@@ -1,0 +1,14 @@
+$breakpoint-sm: 400px;
+$breakpoint-md: 439px;
+
+.font {
+    &-logosize {
+        font-size: 24px;
+        @media (max-width: $breakpoint-md) {
+            font-size: 18px;
+        }
+                @media (max-width: $breakpoint-sm) {
+            font-size: 14px
+        }
+    }
+}
