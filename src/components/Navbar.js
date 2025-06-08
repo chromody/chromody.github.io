@@ -13,7 +13,7 @@ const Topbar = () => {
             <Navbar bg="light" expand="lg" className="shadow-lg">
                 <Container>
                     <Navbar.Brand className="">
-                        <span onMouseEnter={() => {setLogoActive(true)}} onMouseLeave={() => {setLogoActive(false)}} onClick={() => {navigate("/")}} className={`font-FiraCode ${logoActive === true ? "text-primary" : ""}`}>Jesus Villanueva-Segovia</span>
+                        <span onMouseEnter={() => {setLogoActive(true)}} onMouseLeave={() => {setLogoActive(false)}} onClick={() => {navigate("/")}} className={`font-FiraCode font-logosize md:font-logo-large sm:font-logo-small ${logoActive === true ? "text-primary" : ""}`}>Jesus Villanueva-Segovia</span>
                     </Navbar.Brand>
                     
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

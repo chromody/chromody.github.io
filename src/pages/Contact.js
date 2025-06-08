@@ -4,6 +4,8 @@ import ReactJsonView from '@microlink/react-json-view'
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import { TypingCodeBlock } from "react-code-blocks-typing";
+
 
 const Contact = () => {
     const [src, setSrc] = useState({
@@ -14,6 +16,8 @@ const Contact = () => {
     });
     const [submitStatus, setSubmitStatus] = useState("warning");
     const [count, setCount] = useState(0);
+    const text = `portfolio=getPortfolioInstance()\nportfolio.display()`;
+    const typingSpeed = 25;
 
     const updateSrc = (edit) => {
         setSrc(edit.updated_src);
@@ -75,6 +79,16 @@ const Contact = () => {
 
     return (
       <Layout>
+            <div className="bg-dark p-3 rounded drop mb-4" style={{boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)', width: "auto"}}>
+                portfolio.py
+                <TypingCodeBlock
+                text={text}
+                language={"python"}
+                showLineNumbers={50}
+                theme={"dracula"}
+                typingSpeed={typingSpeed}
+                />
+            </div>
             <Container>
                 <Container className="d-flex flex-column align-content-center justify-items-center w-50">
                     <Card className="p-2 mt-4 shadow-lg bg-light">
