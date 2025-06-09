@@ -16,7 +16,7 @@ const Contact = () => {
     });
     const [submitStatus, setSubmitStatus] = useState("warning");
     const [count, setCount] = useState(0);
-    const text = `portfolio=getPortfolioInstance()\nportfolio.display()`;
+    const text = `contact=getContactInstance()\ncontact.display()`;
     const typingSpeed = 25;
 
     const updateSrc = (edit) => {
@@ -80,7 +80,7 @@ const Contact = () => {
     return (
       <Layout>
             <div className="bg-dark p-3 rounded drop mb-4" style={{boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)', width: "auto"}}>
-                portfolio.py
+                contact.py
                 <TypingCodeBlock
                 text={text}
                 language={"python"}
