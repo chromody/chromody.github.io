@@ -23,7 +23,7 @@ const Footer = () => {
                             <a href="https://www.linkedin.com/in/jesusv-s/" className="text-white" target="_blank" rel="noopener noreferrer">
                                 <SVG className="svg-icon" src={"icons8-linkedin.svg"}  style={{ height: "35px", width: "35px", fill: "#52e0c4"}} preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')} />
                             </a> 
-                            <a href="https://drive.google.com/file/d/1aHtmDcbZ-t8Lj1mCcLMyBf0zFHsK5Y_V/view?usp=drive_link" className="text-white" target="_blank" rel="noopener noreferrer" download>
+                            <a href="https://drive.google.com/file/d/1lVufF5OeRjLdk1ipTGKVO0kAj9_dRnfF/view?usp=drive_link" className="text-white" target="_blank" rel="noopener noreferrer" download>
                                 <SVG className="svg-icon" src={"resume.svg"}  style={{ height: "30px", width: "30px", fill: "#52e0c4"}} preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')} />
                             </a>
                             <a href="/#/contact" className="text-white">
